@@ -24,7 +24,7 @@ const CartPage = () => {
             setShipping(0.00)
             setTotal(price.toFixed(2))
         } else {
-            setTotal(price + shipping)
+            setTotal((price + shipping).toFixed(2))
         }
     
       }

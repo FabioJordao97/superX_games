@@ -16,7 +16,7 @@ const HomeCard = (props) => {
             })
             setCart(newCart)
         } else {
-            const addingToCart = products[0].find(product => product.id === productId)
+            const addingToCart = products.find(product => product.id === productId)
             const newProduct = [...cart, { ...addingToCart, quantity: 1}]
             setCart(newProduct)
         }

@@ -8,10 +8,8 @@ const HomePage = () => {
 
     const { products, setProducts, order, setOrder, type, setType } = useContext(GlobalStateContext)
     const history = useHistory()
-    console.log(type)  
     
     useEffect(() => sortData(), [type])
-
 
    const sortData = () => {
 

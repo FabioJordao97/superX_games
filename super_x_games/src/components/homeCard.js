@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import GlobalStateContext from '../globalState/globalStateContext'
 const HomeCard = (props) => {
-    const { products, cart, setCart, shipping, setShipping } = useContext(GlobalStateContext)
+    const { products, cart, setCart} = useContext(GlobalStateContext)
 
     const addToCart = (productId) => {
         const inCart = cart.find(product => product.id === productId)
@@ -9,7 +9,7 @@ const HomeCard = (props) => {
             const newCart = cart.map((product) => {
                 if (productId === product.id) {
                     return {
-                        ...product, quantity: product.quantity + 1, shipping: product.quantity * 10
+                        ...product, quantity: product.quantity + 1
                     }
                 }
                 return product
@@ -17,7 +17,7 @@ const HomeCard = (props) => {
             setCart(newCart)
         } else {
             const addingToCart = products[0].find(product => product.id === productId)
-            const newProduct = [...cart, { ...addingToCart, quantity: 1, shipping: 1 * 10 }]
+            const newProduct = [...cart, { ...addingToCart, quantity: 1}]
             setCart(newProduct)
         }
     }

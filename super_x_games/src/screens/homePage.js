@@ -10,10 +10,10 @@ const HomePage = () => {
     const history = useHistory()
     console.log(type)  
     
-    useEffect(() => sortDeviceData(), [type])
+    useEffect(() => sortData(), [type])
 
 
-   const sortDeviceData = () => {
+   const sortData = () => {
 
     switch(type) {
       case "alphabetical":

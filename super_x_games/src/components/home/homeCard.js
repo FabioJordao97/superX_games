@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
-import GlobalStateContext from '../globalState/globalStateContext'
+import GlobalStateContext from '../../globalState/globalStateContext'
+
 const HomeCard = (props) => {
     const { products, cart, setCart} = useContext(GlobalStateContext)
 

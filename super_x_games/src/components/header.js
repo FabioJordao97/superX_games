@@ -7,8 +7,6 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import superIcon from '../assets/super.png';
 import xIcon from '../assets/x.png';
 
-
-
 const Header = () => {
     const { cart, counter, setCounter } = useContext(GlobalStateContext)
 

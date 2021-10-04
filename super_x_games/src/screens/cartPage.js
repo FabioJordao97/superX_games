@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
+import Bar from '../components/bar'
 import CartCard from '../components/cart/cartCard'
 import CartResults from '../components/cart/cartResults'
+import Footer from '../components/footer'
 import Header from '../components/header'
 import GlobalStateContext from '../globalState/globalStateContext'
 
@@ -9,6 +11,7 @@ const CartPage = () => {
     return (
         <div>
             <Header />
+            <Bar />
              {cart.map((product)=>{
                 return (
                     <CartCard
@@ -23,6 +26,7 @@ const CartPage = () => {
                 )
             })}
             <CartResults />
+            <Footer />
         </div>
     )
 }

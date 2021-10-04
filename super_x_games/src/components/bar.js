@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import GlobalStateContext from "../../globalState/globalStateContext";
+import { useHistory } from "react-router";
+import GlobalStateContext from "../globalState/globalStateContext";
 
-const OrderBar = () => {
-    const {products, setProducts, type, setType} = useContext(GlobalStateContext)
-
+const Bar = () => {
+    const {products, setProducts, type, setType, setCart} = useContext(GlobalStateContext)
+    const history = useHistory()
     useEffect(() => {
         setType('')      
         sortData()
@@ -53,8 +54,13 @@ const OrderBar = () => {
           return setProducts(products)
       }
     }
+
+    const clearCart = () => {
+      setCart([])
+    }
     return (
         <div>
+          {history.location.pathname === '/' ? 
             <select onChange={(event) => setType(event.target.value)}>
                 <option value=''>Escolha</option>
                 <option value="alphabeticalUP">Ordem Alfabética A ⇑ Z</option>
@@ -64,8 +70,15 @@ const OrderBar = () => {
                 <option value="scoreUP">Popularidade crescente</option>
                 <option value="scoreDown">Popularidade decrescente</option>
             </select>
+
+            :
+
+            <div>
+              <button onClick={() => clearCart()}>Limpar</button>
+            </div>
+            }
         </div>
     )
 }
 
-export default OrderBar
+export default Bar

@@ -1,7 +1,8 @@
 import React, { useContext} from 'react'
+import Footer from '../components/footer'
 import Header from '../components/header'
 import HomeCard from '../components/home/homeCard'
-import OrderBar from '../components/home/orderBar'
+import Bar from '../components/bar'
 import GlobalStateContext from '../globalState/globalStateContext'
 
 const HomePage = () => {
@@ -11,7 +12,7 @@ const HomePage = () => {
     return (
         <div>
             <Header />
-            <OrderBar />
+            <Bar />
             {products.map((product) => {
                 return (
                     <HomeCard
@@ -23,6 +24,7 @@ const HomePage = () => {
                     />
                 )
             })}
+            <Footer />
         </div>
     )
 }

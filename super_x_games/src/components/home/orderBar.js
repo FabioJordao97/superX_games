@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import GlobalStateContext from "../globalState/globalStateContext";
+import GlobalStateContext from "../../globalState/globalStateContext";
 
 const OrderBar = () => {
     const {products, setProducts, type, setType} = useContext(GlobalStateContext)
@@ -14,14 +14,14 @@ const OrderBar = () => {
       switch(type) {
         case "alphabeticalUP":
           products.sort(function(a,b) {
-            return (a.name.toUpperCase() < b.name.toUpperCase()) ? -1 : (a.name.toUpperCase() > b.name.toUpperCase()) ? 1 : 0
+            return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0
           })
           setProducts(products)
           break;
   
           case "alphabeticalDown":
           products.sort(function(a,b) {
-            return (a.name.toUpperCase() < b.name.toUpperCase()) ? 1 : (a.name.toUpperCase() > b.name.toUpperCase()) ? -1 : 0
+            return (a.name < b.name) ? 1 : (a.name > b.name) ? -1 : 0
           })
           setProducts(products)
           break;

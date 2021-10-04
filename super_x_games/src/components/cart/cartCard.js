@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import GlobalStateContext from '../globalState/globalStateContext'
+import GlobalStateContext from '../../globalState/globalStateContext'
 
 const CartCard = (props) => {
 

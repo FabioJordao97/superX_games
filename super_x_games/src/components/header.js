@@ -37,7 +37,7 @@ const Header = () => {
                     </div>
                     <CartCounter>
                         <CartIcon>
-                            <ShoppingCartIcon color={'white'} onClick={() => goToCart(history)}></ShoppingCartIcon>
+                            <ShoppingCartIcon color='secondary' onClick={() => goToCart(history)}></ShoppingCartIcon>
                         </CartIcon>
                         <CartCount>({counter})</CartCount>
                     </CartCounter>
@@ -51,7 +51,7 @@ const Header = () => {
                     </div>
                     <CartCounter>
                         <CartIcon>
-                            <ShoppingCartIcon></ShoppingCartIcon>
+                            <ShoppingCartIcon color='secondary'></ShoppingCartIcon>
                         </CartIcon>
                         <CartCount>({counter})</CartCount>
                     </CartCounter>

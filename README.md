@@ -1,4 +1,4 @@
-### SuperX Games
+# SuperX Games
 
 # Descrição do Projeto
 

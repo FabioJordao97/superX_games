@@ -2,16 +2,46 @@ import styled from 'styled-components'
 import ArrowBackIosOutlined from '@material-ui/icons/ArrowBackIosOutlined'
 import ArrowForwardIosOutlined from '@material-ui/icons/ArrowForwardIosOutlined'
 
-export const EmptyCart = styled.p`
+export const EmptyCart = styled.div`
+padding-top: 5vh;
+`
+
+export const EmptyCartTitle = styled.p`
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
+font-weight: bold;
+`
+export const EmptyCartSubTitle = styled.p`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-style: italic;
+`
+
+export const EmptyCartButtonDiv = styled.div`
+display: flex;
+justify-content: center;
+padding-top: 5vh;
+`
+export const EmptyCartButton = styled.button`
+padding: 25px 25px 25px 25px;
+border-radius: 10px;
+background-color: #BB2B3B;
+color: white;
+font-weight: bold;
+&:hover{
+  padding: 35px 35px 35px 35px;
+  cursor: pointer;
+}
 `
 
 export const CartResultsDiv = styled.div`
 text-align: center;
 margin-left: 30vw;
-margin-top: 3vh;
+margin-top: 2vh;
 `
 
 export const CartContainer = styled.div`
@@ -65,4 +95,9 @@ color: #BB2B3B;
 export const QuantityDiv = styled.div`
 display: flex;
 justify-content: space-between;
+`
+
+export const FreeShipping = styled.span`
+color: #BB2B3B;
+font-weight: bold
 `

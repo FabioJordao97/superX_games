@@ -15,7 +15,7 @@ margin-right: 5px;
 export const CartFooterDiv = styled.div`
 background-color: #0F0F10;
 width: 100%;
-margin-top: 70vh;
+margin-top: 14vw;
 position: relative;
 bottom: 0;
 `

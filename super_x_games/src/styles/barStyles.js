@@ -44,13 +44,8 @@ border: 1px black;
 margin-bottom: 20px;
 border-style: solid;
 &:hover{
+    padding: 5px 5px 5px 5px;
     cursor: pointer;
-}
-`
-
-export const DeleteIcon = styled.div`
-&:hover{
-    cursor: pointer
 }
 `
 

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import GlobalStateContext from '../../globalState/globalStateContext';
-import { CartResultsDiv } from '../../styles/cartStyles';
+import { CartResultsDiv, FreeShipping } from '../../styles/cartStyles';
 
 const CartResults = () => {
 
@@ -19,10 +19,10 @@ const CartResults = () => {
     
         setTotalItems(product)
         setSubTotal(price.toFixed(2))
-        setShipping(shipping.toFixed(2))
+        setShipping(`R$ ${shipping.toFixed(2)}`)
 
         if(price > 250){
-            setShipping(0.00)
+            setShipping(<FreeShipping>Grátis!</FreeShipping>)
             setTotal(price.toFixed(2))
         } else {
             setTotal((price + shipping).toFixed(2))
@@ -37,7 +37,7 @@ const CartResults = () => {
         <CartResultsDiv>
           <h2>Resumo</h2>
           <p>Quantidade: {totalItems}</p>
-            <p>Frete: R$ {shipping}</p>
+            <p>Frete: {shipping}</p>
             <p>Subtotal: R$ {subTotal}</p>
             <p>Total: R$ {total}</p>
         </CartResultsDiv>

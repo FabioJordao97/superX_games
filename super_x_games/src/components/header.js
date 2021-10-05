@@ -7,8 +7,6 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import superIcon from '../assets/super.png';
 import xIcon from '../assets/x.png';
 
-
-
 const Header = () => {
     const { cart, counter, setCounter } = useContext(GlobalStateContext)
 
@@ -37,7 +35,7 @@ const Header = () => {
                     </div>
                     <CartCounter>
                         <CartIcon>
-                            <ShoppingCartIcon color={'white'} onClick={() => goToCart(history)}></ShoppingCartIcon>
+                            <ShoppingCartIcon color='secondary' onClick={() => goToCart(history)}></ShoppingCartIcon>
                         </CartIcon>
                         <CartCount>({counter})</CartCount>
                     </CartCounter>
@@ -51,7 +49,7 @@ const Header = () => {
                     </div>
                     <CartCounter>
                         <CartIcon>
-                            <ShoppingCartIcon></ShoppingCartIcon>
+                            <ShoppingCartIcon color='secondary'></ShoppingCartIcon>
                         </CartIcon>
                         <CartCount>({counter})</CartCount>
                     </CartCounter>

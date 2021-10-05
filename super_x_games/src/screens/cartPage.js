@@ -5,6 +5,7 @@ import CartResults from '../components/cart/cartResults'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import GlobalStateContext from '../globalState/globalStateContext'
+import { CartFooterDiv } from '../styles/footerStyles'
 
 const CartPage = () => {
     const {cart} = useContext(GlobalStateContext)    
@@ -12,6 +13,12 @@ const CartPage = () => {
         <div>
             <Header />
             <Bar />
+
+            {cart.length === 0 ?             
+            <p>Carrinho vazio</p> 
+            
+            :
+            <div>
              {cart.map((product)=>{
                 return (
                     <CartCard
@@ -26,7 +33,11 @@ const CartPage = () => {
                 )
             })}
             <CartResults />
+           </div>
+            }
+            <CartFooterDiv>
             <Footer />
+            </CartFooterDiv>
         </div>
     )
 }

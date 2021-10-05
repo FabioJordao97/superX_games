@@ -1,10 +1,11 @@
 import React from 'react';
+import { FooterDiv, FooterP } from '../styles/footerStyles';
 
 const Footer = () => {
     return (
-        <div>
-            <p>Created by Fábio Jordão</p>
-        </div>
+        <FooterDiv>
+            <FooterP>Created by Fábio Jordão</FooterP>
+        </FooterDiv>
     )
 }
 

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router";
 import GlobalStateContext from "../globalState/globalStateContext";
+import { BarDiv, BarH2, CleartCartSpan, SelectDiv, Sort, SortOptions, SortSelect, CartBarH2, DeleteIcon } from "../styles/barStyles";
+import DeleteOutlineOutlined from "@material-ui/icons/DeleteOutlineOutlined";
 
 const Bar = () => {
   const { products, setProducts, type, setType, setCart } = useContext(GlobalStateContext)
@@ -61,21 +63,32 @@ const Bar = () => {
   return (
     <div>
       {history.location.pathname === '/' ?
-        <select onChange={(event) => setType(event.target.value)}>
-          <option value=''>Escolha</option>
-          <option value="alphabeticalUP">Ordem Alfabética A ⇑ Z</option>
-          <option value="alphabeticalDown">Ordem Alfabética Z ⇓ A</option>
-          <option value="priceDown">Preço crescente</option>
-          <option value="priceUP">Preço decrescente</option>
-          <option value="scoreUP">Popularidade crescente</option>
-          <option value="scoreDown">Popularidade decrescente</option>
-        </select>
+        <BarDiv>
+          <BarH2>SuperX Games - Games para o gamer de verdade!</BarH2>
+          <SelectDiv>
+          <Sort>Ordenar </Sort>
+          <SortSelect onChange={(event) => setType(event.target.value)}>
+          <SortOptions value=''>Escolha</SortOptions>
+          <SortOptions value="alphabeticalUP">Ordem Alfabética A ⇑ Z</SortOptions>
+          <SortOptions value="alphabeticalDown">Ordem Alfabética Z ⇓ A</SortOptions>
+          <SortOptions value="priceDown">Preço crescente</SortOptions>
+          <SortOptions value="priceUP">Preço decrescente</SortOptions>
+          <SortOptions value="scoreUP">Popularidade crescente</SortOptions>
+          <SortOptions value="scoreDown">Popularidade decrescente</SortOptions>
+        </SortSelect>
+        </SelectDiv>
+        </BarDiv>
+       
 
         :
 
-        <div>
-          <button onClick={() => clearCart()}>Limpar</button>
-        </div>
+        <BarDiv>
+          <CartBarH2>SuperX Games - Games para o gamer de verdade!</CartBarH2>
+            <CleartCartSpan onClick={() => clearCart()}>Esvaziar carrinho</CleartCartSpan>
+            <DeleteIcon>
+            <DeleteOutlineOutlined onClick={() => clearCart()}></DeleteOutlineOutlined>
+            </DeleteIcon>        
+        </BarDiv>
       }
     </div>
   )

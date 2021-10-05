@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router";
 import GlobalStateContext from "../globalState/globalStateContext";
-import { BarDiv, BarH2, CleartCartSpan, SelectDiv, Sort, SortOptions, SortSelect, CartBarH2, DeleteIcon } from "../styles/barStyles";
+import { BarDiv, BarH2, CleartCartSpan, SelectDiv, Sort, SortOptions, SortSelect, CartBarH2, DeleteDiv } from "../styles/barStyles";
 import DeleteOutlineOutlined from "@material-ui/icons/DeleteOutlineOutlined";
 
 const Bar = () => {
@@ -84,10 +84,10 @@ const Bar = () => {
 
         <BarDiv>
           <CartBarH2>SuperX Games - Games para o gamer de verdade!</CartBarH2>
-            <CleartCartSpan onClick={() => clearCart()}>Esvaziar carrinho</CleartCartSpan>
-            <DeleteIcon>
+            <DeleteDiv>
             <DeleteOutlineOutlined onClick={() => clearCart()}></DeleteOutlineOutlined>
-            </DeleteIcon>        
+            <CleartCartSpan onClick={() => clearCart()}>Esvaziar carrinho</CleartCartSpan>            
+            </DeleteDiv>        
         </BarDiv>
       }
     </div>

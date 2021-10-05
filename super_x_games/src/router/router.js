@@ -1,5 +1,6 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import CartPage from '../screens/cartPage'
+import ErrorPage from '../screens/errorPage'
 import HomePage from '../screens/homePage'
 
 const Router = () => {
@@ -15,7 +16,7 @@ const Router = () => {
                 </Route>
 
                 <Route>
-                    <p>Página não encontrada</p>
+                    <ErrorPage />
                 </Route>
             </Switch>
         </BrowserRouter>

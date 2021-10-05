@@ -1,8 +1,9 @@
 import React, {useContext} from 'react'
 import GlobalStateContext from '../../globalState/globalStateContext'
+import { CartPhoto, CartTitles, ProductQuantity, ProductsCart, QuantityDiv, StyledBackArrow, StyledForwardArrow } from '../../styles/cartStyles'
 
 const CartCard = (props) => {
-
+ 
     const {cart, setCart} = useContext(GlobalStateContext)
 
     const increaseQuantity = (productId) => {
@@ -33,17 +34,33 @@ const CartCard = (props) => {
             setCart(newProductInCart)
     }
     return (
-        <div>
-             <p>{props.id}</p>
-            <p>{props.name}</p>
-            <p>{props.price}</p>
-            <p>{props.score}</p>
-            <p>{props.quantity}</p>
-            <p>{props.shipping}</p>
-            <img src={props.image} alt={props.name}/>
-            <button onClick={() => increaseQuantity(props.id)}>Adicionar mais um</button>
-            <button onClick={() => decreaseQuantity(props.id)}>Remover um</button>
-        </div>
+        <ProductsCart>
+            <CartPhoto src={props.image} alt={props.name}/>
+            <div>
+            <CartTitles>Nome: </CartTitles>
+            <p>{props.name}</p> 
+            </div>  
+
+            <div>                             
+            <CartTitles>Quantidade: </CartTitles>
+            <QuantityDiv>
+            <StyledBackArrow  onClick={() => decreaseQuantity(props.id)}></StyledBackArrow>
+            <span>{props.quantity}</span>
+            <StyledForwardArrow onClick={() => increaseQuantity(props.id)} />
+            </QuantityDiv>
+            </div>
+
+            <div>
+            <CartTitles>Valor: </CartTitles>
+            <p>R$ {(props.price).toFixed(2)}</p>
+            </div>
+
+            <div>
+            <CartTitles>Valor Total: </CartTitles>
+            <p>R$ {(props.price * props.quantity).toFixed(2)}</p>
+            </div>
+            <fr></fr>
+        </ProductsCart>
     )
 }
 

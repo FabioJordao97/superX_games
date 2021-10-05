@@ -31,17 +31,24 @@ font-family: 'Courier New', Courier, monospace;
 
 export const CleartCartSpan = styled.span`
 font-weight: bold;
-padding-top: 25px;
-margin-right: -5vw;
 &:hover{
     cursor: pointer
 }
+`
 
+export const DeleteDiv = styled.div`
+display: flex;
+justify-content: flex-end;
+margin-top: 4vh;
+border: 1px black;
+margin-bottom: 20px;
+border-style: solid;
+&:hover{
+    cursor: pointer;
+}
 `
 
 export const DeleteIcon = styled.div`
-display: inline;
-padding-top: 25px;
 &:hover{
     cursor: pointer
 }

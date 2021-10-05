@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import GlobalStateContext from '../../globalState/globalStateContext';
+import { CartResultsDiv } from '../../styles/cartStyles';
 
 const CartResults = () => {
 
@@ -33,12 +34,13 @@ const CartResults = () => {
         cartTotal()
       }, [cart, totalItems, subTotal, shipping, setSubTotal, setTotalItems, setShipping])
     return (
-        <div>
+        <CartResultsDiv>
+          <h2>Resumo</h2>
           <p>Quantidade: {totalItems}</p>
-            <p>Frete: {shipping}</p>
-            <p>Subtotal: {subTotal}</p>
-            <p>Total: {total}</p>
-        </div>
+            <p>Frete: R$ {shipping}</p>
+            <p>Subtotal: R$ {subTotal}</p>
+            <p>Total: R$ {total}</p>
+        </CartResultsDiv>
     )
 }
 

@@ -1,5 +1,6 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import GlobalStateContext from '../../globalState/globalStateContext'
+import { ButtonDiv, PhotoDiv, ProductButton, ProductCard, ProductName, ProductPhoto, ProductPrice, ProductScore, ScoreDiv } from '../../styles/homeStyles'
 
 const HomeCard = (props) => {
     const { products, cart, setCart} = useContext(GlobalStateContext)
@@ -23,14 +24,17 @@ const HomeCard = (props) => {
         }
     }
     return (
-        <div>
-            <p>{props.id}</p>
-            <p>{props.name}</p>
-            <p>{props.price}</p>
-            <p>{props.score}</p>
-            <img src={props.image} alt={props.name}/>
-            <button onClick={() => addToCart(props.id)}>Adicionar ao carrinho</button>
-        </div>
+        <ProductCard>
+            <ProductScore>Popularidade: {props.score}</ProductScore>
+            <PhotoDiv>            
+            <ProductPhoto src={props.image} alt={props.name}/>
+            </PhotoDiv>
+            <ProductName>{props.name}</ProductName>
+            <ProductPrice>R$ {props.price.toFixed(2)}</ProductPrice>            
+            <ButtonDiv>            
+            <ProductButton onClick={() => addToCart(props.id)}>Adicionar ao carrinho</ProductButton>
+            </ButtonDiv>
+        </ProductCard>
     )
 }
 

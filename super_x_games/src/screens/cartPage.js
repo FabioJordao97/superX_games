@@ -13,6 +13,12 @@ const CartPage = () => {
         <div>
             <Header />
             <Bar />
+
+            {cart.length === 0 ?             
+            <p>Carrinho vazio</p> 
+            
+            :
+            <div>
              {cart.map((product)=>{
                 return (
                     <CartCard
@@ -27,6 +33,8 @@ const CartPage = () => {
                 )
             })}
             <CartResults />
+           </div>
+            }
             <CartFooterDiv>
             <Footer />
             </CartFooterDiv>

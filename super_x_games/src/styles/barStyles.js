@@ -22,10 +22,32 @@ font-weight: bold;
 
 export const SortSelect = styled.select`
 border-radius: 1vh 1vh;
-background-color: #0F0F10;
-color: white;
+font-family: 'Courier New', Courier, monospace;
 `
 
 export const SortOptions = styled.option`
-color: white;
+font-family: 'Courier New', Courier, monospace;
+`
+
+export const CleartCartSpan = styled.span`
+font-weight: bold;
+padding-top: 25px;
+margin-right: -5vw;
+&:hover{
+    cursor: pointer
+}
+
+`
+
+export const DeleteIcon = styled.div`
+display: inline;
+padding-top: 25px;
+&:hover{
+    cursor: pointer
+}
+`
+
+export const CartBarH2 = styled.h2`
+display: inline;
+padding-left: 22vw;
 `
